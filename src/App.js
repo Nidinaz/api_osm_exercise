@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import axios from "axios";
+import { useState } from "react";
 
 function App() {
+  //state die de data renderd en veranderd
+  const [search, setSearch] = useState({
+    query: "",
+    osmTag: "",
+  });
+
+  const onQueryChanged = (field) => {
+    setSearch({
+      query: field.target.value,
+      osmTag:'',
+    })
+  }
+
+  const onOsmTagChanged = (field) => {
+    setSearch({
+    query: search.query,
+    osmTag: field.target.value
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <div className='api-descibtion-text'>This is a try</div>
+        <form>
+          <div>
+          <label htmlFor='capitol'>Finding Capitol</label>
+          <input id ='capitolfield' type='text' />
+          </div>
+          <div>
+            <label htmlFor='osmTag'>osmTag</label>
+            <input id='osmfield' type='text' />
+          </div>
+          <button className='submitbutton'>submit</button>
+        </form>
+      </div>
   );
 }
 
