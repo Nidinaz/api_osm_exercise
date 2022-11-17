@@ -21,12 +21,18 @@ function App() {
       query: search.query,
       osmTag: field.target.value,
     });
+
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log('submitting')
+  }
+  
   return (
     <div>
       <div className="api-descibtion-text">This is a try</div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="capitol">Finding Capitol</label>
           <input id="capitolfield" type="text" placeholder="e.g. Berlin" value={search.query} onChange={onQueryChanged} />
@@ -35,7 +41,7 @@ function App() {
           <label htmlFor="osmTag">osmTag</label>
           <input id="osmfield" type="text" placeholder="e.g. tourism" value={search.osmTag} onChange={onOsmTagChanged}/>
         </div>
-        <button className="submitbutton">submit</button>
+        <button type='submit' className="submitbutton">submit</button> 
       </form>
     </div>
   );
