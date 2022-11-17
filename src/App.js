@@ -12,32 +12,32 @@ function App() {
   const onQueryChanged = (field) => {
     setSearch({
       query: field.target.value,
-      osmTag:'',
-    })
-  }
+      osmTag: "",
+    });
+  };
 
   const onOsmTagChanged = (field) => {
     setSearch({
-    query: search.query,
-    osmTag: field.target.value
-    })
-  }
+      query: search.query,
+      osmTag: field.target.value,
+    });
+  };
 
   return (
     <div>
-      <div className='api-descibtion-text'>This is a try</div>
-        <form>
-          <div>
-          <label htmlFor='capitol' >Finding Capitol</label>
-          <input id ='capitolfield' type='text' placeholder="e.g. Berlin"/>
-          </div>
-          <div>
-            <label htmlFor='osmTag'>osmTag</label>
-            <input id='osmfield' type='text' placeholder="e.g. tourism"/>
-          </div>
-          <button className='submitbutton'>submit</button>
-        </form>
-      </div>
+      <div className="api-descibtion-text">This is a try</div>
+      <form>
+        <div>
+          <label htmlFor="capitol">Finding Capitol</label>
+          <input id="capitolfield" type="text" placeholder="e.g. Berlin" value={search.query} onChange={onQueryChanged} />
+        </div>
+        <div>
+          <label htmlFor="osmTag">osmTag</label>
+          <input id="osmfield" type="text" placeholder="e.g. tourism" value={search.osmTag} onChange={onOsmTagChanged}/>
+        </div>
+        <button className="submitbutton">submit</button>
+      </form>
+    </div>
   );
 }
 
