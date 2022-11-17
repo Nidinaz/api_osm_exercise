@@ -28,12 +28,12 @@ function App() {
       <div className='api-descibtion-text'>This is a try</div>
         <form>
           <div>
-          <label htmlFor='capitol'>Finding Capitol</label>
-          <input id ='capitolfield' type='text' />
+          <label htmlFor='capitol' >Finding Capitol</label>
+          <input id ='capitolfield' type='text' placeholder="e.g. Berlin"/>
           </div>
           <div>
             <label htmlFor='osmTag'>osmTag</label>
-            <input id='osmfield' type='text' />
+            <input id='osmfield' type='text' placeholder="e.g. tourism"/>
           </div>
           <button className='submitbutton'>submit</button>
         </form>
