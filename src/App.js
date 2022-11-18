@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 
 function App() {
-  //state die de data renderd en veranderd
+
   const [search, setSearch] = useState({
     query: "",
     osmTag: "",
@@ -39,7 +39,7 @@ function App() {
       </div>
       <form className="form">
         <div className="query-container">
-          <label htmlFor="capitol"></label>
+          <label htmlFor="capitol">capitol</label>
           <input
             id="capitolfield"
             type="text"
@@ -49,7 +49,7 @@ function App() {
           />
         </div>
         <div className="osmtag-container">
-          <label htmlFor="osmTag"></label>
+          <label htmlFor="osmTag">osmTag</label>
           <input
             id="osmfield"
             type="text"
